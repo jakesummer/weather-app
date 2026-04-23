@@ -1,4 +1,5 @@
 import weather from "./modules/weather.js";
+import { format } from "date-fns";
 
 async function newSearch(search) {
   try {
@@ -23,7 +24,8 @@ function updateDisplay(data) {
   conditionText.textContent = condition;
 
   const date = new Date(data.currentConditions.datetimeEpoch * 1000);
-  dateText.textContent = date;
+  const formattedDate = format(date, "EEEE, LLL do");
+  dateText.textContent = formattedDate;
 
   const iconName = data.currentConditions.icon;
   import(`./assets/imgs/${iconName}.svg`).then((icon) => {
