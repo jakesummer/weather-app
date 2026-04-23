@@ -47,6 +47,9 @@ function handleInvalidInput(search) {
 }
 
 function init() {
+  // Default weather on page load
+  newSearch("New York, NY, United States");
+
   const searchInput = document.getElementById("search-input");
   const searchBtn = document.getElementById("search-btn");
 
