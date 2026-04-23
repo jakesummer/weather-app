@@ -3,10 +3,35 @@ import weather from "./modules/weather.js";
 async function newSearch(search) {
   try {
     const data = await weather(search);
-    console.log(data);
+    updateDisplay(data);
   } catch (error) {
     console.log(error);
   }
+}
+
+function updateDisplay(data) {
+  const locationText = document.getElementById("location");
+  const conditionText = document.getElementById("condition");
+  const dateText = document.getElementById("date");
+  const iconImg = document.getElementById("icon");
+  const tempText = document.getElementById("temperature");
+
+  const location = data.resolvedAddress;
+  locationText.textContent = location;
+
+  const condition = data.currentConditions.conditions;
+  conditionText.textContent = condition;
+
+  const date = new Date(data.currentConditions.datetimeEpoch * 1000);
+  dateText.textContent = date;
+
+  const iconName = data.currentConditions.icon;
+  import(`./assets/imgs/${iconName}.svg`).then((icon) => {
+    iconImg.src = icon.default;
+  });
+
+  const temp = Math.round(data.currentConditions.temp);
+  tempText.textContent = temp;
 }
 
 function init() {
