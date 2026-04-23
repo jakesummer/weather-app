@@ -4,8 +4,8 @@ async function newSearch(search) {
   try {
     const data = await weather(search);
     updateDisplay(data);
-  } catch (error) {
-    console.log(error);
+  } catch {
+    handleInvalidInput(search);
   }
 }
 
@@ -32,6 +32,18 @@ function updateDisplay(data) {
 
   const temp = Math.round(data.currentConditions.temp);
   tempText.textContent = temp;
+}
+
+function handleInvalidInput(search) {
+  const errorContainer = document.getElementById("error-container");
+  const errorText = document.getElementById("error-text");
+
+  errorText.textContent = `"${search}" not found!`;
+  errorContainer.hidden = false;
+
+  setTimeout(() => {
+    errorContainer.hidden = true;
+  }, 2000);
 }
 
 function init() {
