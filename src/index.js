@@ -66,6 +66,7 @@ function init() {
     e.preventDefault();
     const search = searchInput.value;
     newSearch(search, getUnit());
+    searchInput.value = "";
   });
 
   unitCheckbox.addEventListener("click", () => {
