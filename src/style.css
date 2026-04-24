@@ -88,9 +88,13 @@ h6 {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family:
     "Archivo", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  height: 100vh;
+  background-color: var(--neutral-color);
 }
 
 form {
@@ -144,11 +148,44 @@ form > svg {
   fill: var(--body-font-color);
 }
 
+.display {
+  background-color: var(--neutral-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#location {
+  font-size: 3rem;
+  color: var(--heading-font-color);
+}
+
+.subheading {
+  font-size: 1.5rem;
+  color: var(--body-font-color);
+}
+
+#temp-container {
+  display: flex;
+}
+
+#temperature {
+  font-size: 6rem;
+  margin-top: -1.5rem;
+  color: var(--heading-font-color);
+}
+
+#icon {
+  margin: 1.5rem 0;
+}
+
 #temp-unit-toggle-container {
   display: flex;
   justify-content: space-around;
   background-color: var(--neutral-color-dark);
-  width: 5.5rem;
+  width: 7rem;
   padding: 0.3rem 0.6rem 0.3rem;
   position: relative;
 }
@@ -170,13 +207,11 @@ form > svg {
   width: 43%;
   position: absolute;
   top: 13%;
-  left: auto;
   right: 7%;
   background-color: var(--neutral-color);
 }
 
 #temp-unit-toggle-container:has(#temp-unit-toggle:checked)::before {
-  right: auto;
   left: 7%;
 }
 
