@@ -76,6 +76,16 @@ h6 {
   font-display: swap;
 }
 
+:root {
+  --primary-color: #0ea5e9;
+  --primary-color-light: #34b5fa;
+  --primary-color-dark: #004c6e;
+  --neutral-color: #eceef0;
+  --neutral-color-light: #ffffff;
+  --heading-font-color: #000000;
+  --body-font-color: #64748b;
+}
+
 body {
   font-family:
     "Archivo", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
@@ -83,6 +93,7 @@ body {
 }
 
 form {
+  background-color: var(--neutral-color-light);
   display: flex;
   justify-content: center;
   padding: 0.8rem 0;
@@ -93,30 +104,41 @@ form {
 #search-btn {
   border-radius: 25px;
   border: none;
-  padding: 0.3rem 3.2rem 0.3rem 2.2rem;
+  padding: 0.5rem 3.5rem 0.5rem 2.6rem;
 }
 
 #search-input {
   width: 33%;
+  background-color: var(--neutral-color);
+  color: var(--body-font-color);
+  font-weight: 600;
 }
 
-#search-btn,
-form > .search-icon {
-  top: 50%;
-  transform: translateY(-50%);
+#search-input:focus {
+  outline: 2px solid var(--primary-color);
 }
 
 #search-btn {
   position: absolute;
   right: calc(33% + 13px);
-  padding: 0 0.5rem;
+  padding: 0.2rem 0.8rem;
+  background-color: var(--primary-color-dark);
+  fill: var(--neutral-color-light);
 }
 
-.search-icon {
+#search-btn,
+form > svg {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#search-btn > svg {
+  width: 1.3rem;
+}
+
+form > svg {
   width: 1.5rem;
-}
-
-form > .search-icon {
   position: absolute;
-  left: calc(33% + 13px);
+  left: calc(33% + 20px);
+  fill: var(--body-font-color);
 }
