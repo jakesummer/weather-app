@@ -48,7 +48,14 @@
       <h1 id="location"></h1>
       <p><span id="condition"></span> • <span id="date"></span></p>
       <img src="#" id="icon" width="200" height="200" />
-      <p id="temperature"></p>
+      <div class="temp-container">
+        <p id="temperature"></p>
+        <label id="temp-unit-toggle-container" for="temp-unit-toggle">
+          <p>ºF</p>
+          <p>ºC</p>
+          <input type="checkbox" id="temp-unit-toggle" checked />
+        </label>
+      </div>
     </div>
   </body>
 </html>
