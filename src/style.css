@@ -1,22 +1,24 @@
 /* === CSS Reset ===*/
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 *:not(dialog) {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    html {
-      interpolate-size: allow-keywords;
+  html {
+    interpolate-size: allow-keywords;
   }
 }
 
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 img,
@@ -24,82 +26,97 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 p {
-    text-wrap: pretty;
+  text-wrap: pretty;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
 }
 
-#root, #__next {
-    isolation: isolate;
+#root,
+#__next {
+  isolation: isolate;
 }
 
 /* === Styles === */
 @font-face {
-    font-family: 'Archivo';
-    src: url('./assets/fonts/Archivo.woff2') format('woff2-variations'),
-        url('./assets/fonts/Archivo.woff') format('woff-variations');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Archivo";
+  src:
+    url("./assets/fonts/Archivo.woff2") format("woff2-variations"),
+    url("./assets/fonts/Archivo.woff") format("woff-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-    font-family: "Archivo", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+  font-family:
+    "Archivo", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 form {
-    display: flex;
-    justify-content: center;
-    padding: 0.8rem 0;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 0;
+  position: relative;
 }
 
 #search-input,
 #search-btn {
-    border-radius: 25px;
-    border: none;
-    padding: 0.3rem 3.2rem 0.3rem 2.2rem;
+  border-radius: 25px;
+  border: none;
+  padding: 0.3rem 3.2rem 0.3rem 2.2rem;
 }
 
 #search-input {
-    width: 33%;
+  width: 33%;
 }
 
 #search-btn,
 form > .search-icon {
-    top: 50%;
-    transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #search-btn {
-    position: absolute;
-    right: calc(33% + 13px);
-    padding: 0 0.5rem;
+  position: absolute;
+  right: calc(33% + 13px);
+  padding: 0 0.5rem;
 }
 
 .search-icon {
-    width: 1.5rem;
+  width: 1.5rem;
 }
 
 form > .search-icon {
-    position: absolute;
-    left: calc(33% + 13px);
+  position: absolute;
+  left: calc(33% + 13px);
 }
