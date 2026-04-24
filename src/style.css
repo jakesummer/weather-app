@@ -52,6 +52,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* === Styles === */
+@font-face {
+    font-family: 'Archivo';
+    src: url('./assets/fonts/Archivo.woff2') format('woff2-variations'),
+        url('./assets/fonts/Archivo.woff') format('woff-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Archivo", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+}
+
 form {
     display: flex;
     justify-content: center;
