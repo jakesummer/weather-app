@@ -2,10 +2,10 @@ import "./style.css";
 import weather from "./modules/weather.js";
 import { format } from "date-fns";
 
-async function newSearch(search) {
+async function newSearch(search, unit) {
   try {
-    const data = await weather(search);
-    updateDisplay(data);
+    const data = await weather(search, unit);
+    updateDisplay(data)
   } catch {
     handleInvalidInput(search);
   }
@@ -51,15 +51,26 @@ function handleInvalidInput(search) {
 
 function init() {
   // Default weather on page load
-  newSearch("New York, NY, United States");
+  newSearch("New York, NY, United States", "us");
 
   const searchInput = document.getElementById("search-input");
   const searchBtn = document.getElementById("search-btn");
+  const unitCheckbox = document.getElementById("temp-unit-toggle");
+  const locationText = document.getElementById("location");
 
-  searchBtn.addEventListener("click", async (e) => {
+  const getUnit = () => {
+    return unitCheckbox.checked ? "us" : "metric";
+  };
+
+  searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const search = searchInput.value;
-    newSearch(search);
+    newSearch(search, getUnit());
+  });
+
+  unitCheckbox.addEventListener("click", () => {
+    const currentLocation = locationText.textContent;
+    newSearch(currentLocation, getUnit());
   });
 }
 
