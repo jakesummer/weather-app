@@ -85,6 +85,7 @@ h6 {
   --neutral-color-light: #ffffff;
   --heading-font-color: #000000;
   --body-font-color: #64748b;
+  --error-color: #ba1a1a;
 }
 
 body {
@@ -226,4 +227,21 @@ form > svg {
 #temp-unit-toggle-container,
 #temp-unit-toggle-container::before {
   border-radius: 6px;
+}
+
+#error-container:not([hidden]) {
+  position: absolute;
+  top: 4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  vertical-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--error-color);
+  fill: var(--error-color);
+}
+
+#error-container svg {
+  width: 1.3em;
 }
