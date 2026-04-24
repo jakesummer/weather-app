@@ -1,3 +1,4 @@
+import "./style.css";
 import weather from "./modules/weather.js";
 import { format } from "date-fns";
 
